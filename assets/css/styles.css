@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color-black: #152427;
+    --primary-color-black-green: #143c3c;
+    --text-color-black-gray: #575d5e;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -13,7 +19,237 @@ body {
     font-family: "Public Sans", sans-serif;
 }
 
+.container {
+    width: 1140px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
 /* Common */
 a {
     text-decoration: none;
+}
+
+.btn {
+    --height: 57px;
+
+    display: inline-block;
+    min-width: 173px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--primary-color-black-green);
+    border-color: var(--primary-color-black-green);
+    outline: none;
+    user-select: none;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Header */
+.header {
+    margin-top: 28px;
+}
+
+.header__top {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    margin-left: auto;
+}
+
+.navbar__list {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__link {
+    color: var(--text-color-black-gray);
+    padding: 8px 19px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+    color: var(--primary-color-black);
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.action__btn {
+    margin-left: 69px;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    margin: 74px 0 130px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero__content {
+    margin-top: 43px;
+    width: 34%;
+}
+
+.hero__heading {
+    max-width: 368px;
+    color: var(--primary-color-black, #152427);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero__desc {
+    margin-top: 20px;
+    color: var(--text-color-black-gray, #575d5e);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.hero__row {
+    display: flex;
+    column-gap: 36px;
+    margin-top: 42px;
+}
+
+.hero-video__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 14px;
+}
+
+.hero-video__btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -3px;
+    z-index: -1;
+    display: inline-block;
+    width: 28px;
+    height: 59px;
+    transform: translateY(-50%);
+    background-image: url(../img/half-circle.svg);
+}
+
+.hero-video__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-left: 3px;
+    border-radius: 50%;
+    color: #fef6fb;
+    background: #83a17d;
+}
+
+.hero-video__text {
+    color: #152427;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.66;
+}
+
+.hero__images {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    width: 56%;
+}
+
+.hero__images::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: 53%;
+    padding-top: 53%;
+    transform: translate(-50%, -50%);
+    background: #4dbb9a;
+    filter: blur(100px);
+    border-radius: 50%;
+}
+
+.hero__img {
+    display: block;
+    width: 100%;
+    height: 466px;
+    object-fit: cover;
+    border-radius: 110px;
+    transition: 0.25s;
+}
+
+.hero__img:nth-child(2) {
+    margin-top: 77px;
+}
+
+.hero__layer {
+    position: absolute;
+    width: 545px;
+    height: 360px;
+}
+
+.hero__layer--top {
+    left: 22%;
+}
+
+.hero__layer::before,
+.hero__layer::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+}
+
+.hero__layer::before {
+    width: 72px;
+    height: 72px;
+    z-index: 1;
+    background-image: url(../img/flower.png);
+}
+
+.hero__layer::after {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/flower-layer.png);
+}
+
+.hero__layer--top::before {
+    top: 0;
+    left: 0;
+}
+
+.hero__layer--top::after {
+    top: -40px;
+    left: 34px;
+    rotate: 186deg;
+}
+
+.hero__layer--bottom,
+.hero__layer--bottom::before {
+    bottom: 0;
+    right: 0;
+}
+
+.hero__layer--bottom::after {
+    rotate: 22deg;
+    right: -20px;
 }
