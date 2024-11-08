@@ -8,6 +8,7 @@
     --primary-color-black: #152427;
     --primary-color-black-green: #143c3c;
     --text-color-black-gray: #575d5e;
+    --scondery-color-light-green: #e2eddf;
 }
 
 html {
@@ -252,4 +253,15 @@ a {
 .hero__layer--bottom::after {
     rotate: 22deg;
     right: -20px;
+}
+
+/* Member */
+.member__images {
+    padding: 76px 121px;
+    border-radius: 999px;
+    background: var(--scondery-color-light-green, #e2eddf);
+}
+
+.member__img {
+    max-width: 100%;
 }
