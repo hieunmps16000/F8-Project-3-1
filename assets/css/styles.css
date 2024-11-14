@@ -144,11 +144,36 @@ textarea {
 
 /* Header */
 .header {
-    margin-top: 28px;
-    font-family: "Public Sans";
+    margin-top: 15px;
+    padding: 13px 0;
+    background: #fff;
+    font-family: "Public Sans", sans-serif;
 }
 
-.header__top {
+.header.fixed {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.header__row::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        #fff 0%,
+        #dddcdc 51.09%,
+        rgba(212, 212, 212, 0) 99.68%
+    );
+}
+
+.header__row {
     display: flex;
     align-items: center;
 }
@@ -166,8 +191,8 @@ textarea {
     color: var(--text-color-black-gray);
     padding: 8px 19px;
     font-size: 1.8rem;
-    font-weight: 500;
     line-height: 1.55;
+    font-weight: 500;
 }
 
 .navbar__link:hover,
@@ -182,8 +207,12 @@ textarea {
 
 /* Hero */
 .hero {
+    margin: 60px 0 130px 0;
+    font-family: "Public Sans", sans-serif;
+}
+
+.hero__row {
     position: relative;
-    margin: 74px 0 130px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -347,16 +376,57 @@ textarea {
 }
 
 /* Member */
-.member__images {
+.member__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 76px 121px;
     border-radius: 999px;
     background: var(--secondary-color-light-green, #e2eddf);
 }
 
-.member__img {
-    max-width: 100%;
+.member__item {
+    display: flex;
+    align-items: center;
 }
 
+.member__item-google {
+    color: var(--primary-color-black-green, #143c3c);
+    font-family: Poppins;
+    font-size: 3.1rem;
+    font-weight: 500;
+}
+
+.member__item-slack {
+    color: var(--primary-color-black-green, #143c3c);
+    font-family: Poppins;
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.member__item-agworld {
+    column-gap: 11px;
+    color: #163c35;
+    font-family: Poppins;
+    font-size: 2.6rem;
+    font-weight: 400;
+}
+
+.member__item-riotinto {
+    color: var(--primary-color-black-green, #143c3c);
+    font-family: "Sonsie One";
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+
+.member__item-heroku {
+    column-gap: 8px;
+    color: var(--primary-color-black-green, #143c3c);
+    font-family: Poppins;
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: 1.995px;
+}
 /* Service */
 .service {
     padding: 106px 0 149px 0;
@@ -464,7 +534,12 @@ textarea {
     border-radius: 8px;
     background: #fff;
     font-family: "Public Sans";
+    transition: 0.25s;
     box-shadow: 0px 7px 54px 0px rgba(154, 154, 154, 0.25);
+}
+
+.about-design:hover {
+    scale: 2;
 }
 
 .about-design__title {
@@ -1009,7 +1084,7 @@ textarea {
 }
 
 .footer__column-heading {
-    margin-bottom: 6px;
+    margin: 12px 0 6px 0;
     color: #fff;
     font-family: "Public Sans";
     font-size: 1.8rem;
