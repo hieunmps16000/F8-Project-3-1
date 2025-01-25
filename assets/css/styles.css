@@ -15,6 +15,7 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -45,6 +46,7 @@ textarea {
     --height: 57px;
 
     display: inline-block;
+    padding: 0 16px;
     min-width: 173px;
     height: var(--height);
     line-height: var(--height);
@@ -87,6 +89,7 @@ textarea {
     font-family: Poppins;
     font-size: 1.6rem;
     font-weight: 500;
+    text-transform: uppercase;
     line-height: 1;
 }
 
@@ -263,7 +266,7 @@ textarea {
     line-height: 1.55;
 }
 
-.hero__row {
+.hero__actions {
     display: flex;
     column-gap: 36px;
     margin-top: 42px;
@@ -287,6 +290,7 @@ textarea {
     height: 59px;
     transform: translateY(-50%);
     background-image: url(../img/half-circle.svg);
+    background-repeat: no-repeat;
 }
 
 .hero-video__icon {
@@ -353,56 +357,36 @@ textarea {
     margin-top: 77px;
 }
 
-.flower__layer {
+/* Hero decor */
+.hero-decor__top {
     position: absolute;
-    width: 545px;
-    height: 360px;
+    top: -32px;
+    left: -167px;
 }
 
-.flower__layer--top {
-    left: 22%;
-}
-
-.flower__layer::before,
-.flower__layer::after {
+.hero-decor__top::before,
+.hero-decor__top::after {
     content: "";
     position: absolute;
-    display: inline-block;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.flower__layer::before {
+.hero-decor__top::before {
+    top: 8px;
+    left: -3px;
+    z-index: 1;
     width: 72px;
     height: 72px;
-    z-index: 1;
-    background-image: url(../img/flower.png);
+    background-image: url(../img/flower-decor-1.svg);
+    transform: translateX(-50%);
 }
 
-.flower__layer::after {
-    width: 100%;
-    height: 100%;
-    background-image: url(../img/flower-layer.png);
-}
-
-.flower__layer--top::before {
-    top: 0;
-    left: 0;
-}
-
-.flower__layer--top::after {
-    top: -40px;
-    left: 34px;
-    rotate: 186deg;
-}
-
-.flower__layer--bottom,
-.flower__layer--bottom::before {
-    bottom: 0;
-    right: 0;
-}
-
-.hero .flower__layer--bottom::after {
-    rotate: 22deg;
-    right: -20px;
+.hero-decor__top::after {
+    width: 545px;
+    height: 361px;
+    background-image: url(../img/decor-1.svg);
 }
 
 /* Member */
@@ -474,13 +458,14 @@ textarea {
 }
 
 .service__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     column-gap: 16px;
     margin-top: 76px;
 }
 
 .service-item {
+    flex-shrink: 0;
+    width: calc((100% / 3) - 32px / 3);
     border-radius: 20px;
     transition: 0.25s;
     overflow: hidden;
@@ -564,6 +549,10 @@ textarea {
 .about__content {
     margin-left: auto;
     width: 43%;
+}
+
+.about .section-heading::after {
+    display: none;
 }
 
 /* About design */
@@ -691,7 +680,7 @@ textarea {
 }
 
 .about-desc {
-    margin-top: 11px;
+    margin-top: 12px;
     color: var(--text-color-light-gray, #7d8188);
     font-size: 1.6rem;
     font-weight: 500;
@@ -846,11 +835,11 @@ textarea {
 
 .section-video__heading {
     margin-top: 0;
-    color: #fff;
+    color: #e7f9f9;
 }
 
 .section-video__heading::after {
-    background: #fff;
+    background: #83a17d;
 }
 
 .section-video__desc {
