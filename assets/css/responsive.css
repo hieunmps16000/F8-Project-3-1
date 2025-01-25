@@ -536,4 +536,18 @@
     .footer__row {
         grid-template-columns: 1fr;
     }
+
+    .footer__heading {
+        font-size: 2.4rem;
+    }
+
+    .footer-form {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-form__input {
+        width: 100%;
+        font-size: 2rem;
+    }
 }
