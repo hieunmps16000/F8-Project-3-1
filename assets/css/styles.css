@@ -583,6 +583,34 @@ textarea {
     display: none;
 }
 
+.about-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.about-decor::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 67px;
+    z-index: 1;
+    width: 72px;
+    height: 72px;
+    rotate: 16deg;
+    background: url(../img/flower-decor-1.svg) top center / contain no-repeat;
+}
+
+.about-decor::after {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 26px;
+    width: 542px;
+    height: 361px;
+    background: url(../img/about-decor-1.svg) top center / contain no-repeat;
+}
+
 /* About design */
 .about-design {
     position: absolute;
