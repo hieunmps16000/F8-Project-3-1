@@ -2,7 +2,7 @@
 @media screen and (min-width: 992px) {
     .tablet-mobile-header,
     .menu-toggle,
-    .service .control,
+    .service__list-wrap .control,
     .footer__menu {
         display: none;
     }
@@ -529,12 +529,21 @@
         margin-top: 60px;
     }
 
+    .process-steps__item:hover {
+        padding: 42px 30px;
+    }
+
     .process-steps__number {
         font-size: 5rem;
     }
 
     .process-steps__desc {
         font-size: 1.4rem;
+    }
+
+    .process-steps__more {
+        margin-top: 16px;
+        text-decoration: none;
     }
 
     .section-video {

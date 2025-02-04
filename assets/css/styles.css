@@ -273,40 +273,54 @@ textarea {
 }
 
 .hero-video__btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    column-gap: 14px;
-}
-
-.hero-video__btn::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -4px;
-    z-index: -1;
-    display: inline-block;
-    width: 28px;
-    height: 59px;
-    transform: translateY(-50%);
-    background-image: url(../img/half-circle.svg);
-    background-repeat: no-repeat;
-}
-
-.hero-video__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hero-video__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 57px;
+    height: 59px;
+}
+
+.hero-video__icon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #143c3c transparent transparent #143c3c;
+    border-radius: 50%;
+    rotate: -45deg;
+}
+
+.hero-video__icon::before {
+    content: "";
+    position: absolute;
     width: 44px;
-    height: 44px;
-    margin-left: 3px;
+    height: 43px;
     border-radius: 50%;
     color: #fef6fb;
     background: #83a17d;
 }
 
+.hero-video__icon svg {
+    position: relative;
+    margin-left: 4px;
+    color: #fff;
+}
+
 .hero-video__text {
+    margin-left: 15px;
     color: #152427;
     font-family: Poppins;
     font-size: 1.8rem;
@@ -314,6 +328,7 @@ textarea {
     line-height: 1.66;
     text-align: center;
     text-transform: capitalize;
+    white-space: nowrap;
 }
 
 .hero-video__text:hover {
@@ -540,7 +555,7 @@ textarea {
 .service-item__desc {
     margin-top: 18px;
     max-width: 268px;
-    color: var(--text-color-light-gray, #7d8188);
+    color: #7d8188;
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.71;
@@ -737,7 +752,7 @@ textarea {
 
 .about-desc {
     margin-top: 12px;
-    color: var(--text-color-light-gray, #7d8188);
+    color: #7d8188;
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.62;
@@ -751,16 +766,16 @@ textarea {
 }
 
 .about__number-title {
-    color: var(--primary-color-black, #152427);
+    color: #152427;
     font-size: 4.2rem;
     font-weight: 600;
     line-height: 1.23;
 }
 
 .about__number-desc {
-    margin-left: auto;
+    margin-left: 24px;
     max-width: 364px;
-    color: var(--text-color-light-gray, #7d8188);
+    color: #7d8188;
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.71;
@@ -781,18 +796,44 @@ textarea {
     align-items: center;
     padding: 50px 20px;
     transition: 0.25s;
-    border-bottom: 1px solid #83a17d;
+}
+
+.process-steps__item::before,
+.process-steps__item:last-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to top, transparent, #83a17d);
+    transition: opacity 0.25s, visibility 0.25s;
+}
+
+.process-steps__item::before {
+    top: 0;
+}
+
+.process-steps__item:last-child::after {
+    bottom: 0;
+}
+
+.process-steps__item:first-child::before,
+.process-steps__item:hover::before,
+.process-steps__item:hover + *::before,
+.process-steps__item:last-child:hover::after {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .process-steps__item:hover {
     padding: 50px 30px;
     border-radius: 33px;
     border: none;
-    background: var(--secondary-color-light-green, #e2eddf);
+    background: #e2eddf;
 }
 
 .process-steps__number {
-    color: var(--primary-color-black-green, #143c3c);
+    color: #143c3c;
     font-size: 7.2rem;
     font-weight: 600;
     line-height: 0.72;
@@ -804,7 +845,7 @@ textarea {
 
 .process-steps__title {
     margin-top: 40px;
-    color: var(--primary-color-black, #152427);
+    color: #152427;
     font-size: 2.2rem;
     font-weight: 600;
     line-height: 1;
@@ -813,7 +854,7 @@ textarea {
 .process-steps__more {
     display: inline-block;
     margin-top: 22px;
-    color: var(--text-color-black-gray, #575d5e);
+    color: #575d5e;
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1;
@@ -858,7 +899,7 @@ textarea {
 .process-steps__desc {
     margin-left: auto;
     max-width: 560px;
-    color: var(--text-color-light-gray, #7d8188);
+    color: #7d8188;
     font-family: "Public Sans";
     font-size: 1.8rem;
     font-weight: 500;
@@ -876,7 +917,7 @@ textarea {
 /* Section Video */
 .section-video {
     padding: 116px 0 63px 0;
-    background: var(--primary-color-black-green, #143c3c);
+    background: #143c3c;
 }
 
 .section-video__wrap {
@@ -900,7 +941,7 @@ textarea {
 
 .section-video__desc {
     max-width: 568px;
-    color: var(--secondary-color-gray, #6a8383);
+    color: #6a8383;
     font-family: "Public Sans";
     font-size: 1.8rem;
     font-weight: 500;
@@ -996,7 +1037,7 @@ textarea {
 .feature__desc {
     margin: 20px auto 0 auto;
     max-width: 547px;
-    color: var(--text-color-light-gray, #7d8188);
+    color: #7d8188;
     text-align: center;
     font-size: 1.6rem;
     font-weight: 500;
@@ -1039,7 +1080,7 @@ textarea {
 
 .feature-item__desc {
     margin-top: 10px;
-    color: var(--text-color-light-gray, #7d8188);
+    color: #7d8188;
     text-align: center;
     font-size: 1.4rem;
     font-weight: 500;
@@ -1086,7 +1127,7 @@ textarea {
 
 .blog-item:hover .blog-item__tag {
     color: #fff;
-    background: var(--primary-color-black-green, #143c3c);
+    background: #143c3c;
 }
 
 .blog-item__img {
@@ -1115,13 +1156,13 @@ textarea {
     border-radius: 999px;
     transition: 0.25s;
     color: #000;
-    background: var(--secondary-color-light-green, #e2eddf);
+    background: #e2eddf;
 }
 
 .blog-item__title {
     display: block;
     margin: 12px 0 16px 0;
-    color: var(--primary-color-black-green, #143c3c);
+    color: #143c3c;
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.66;
@@ -1132,7 +1173,7 @@ textarea {
     margin-top: auto;
     padding-top: 10px;
     text-align: right;
-    color: var(--text-color-black-gray, #575d5e);
+    color: #575d5e;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.2;
@@ -1251,7 +1292,7 @@ textarea {
 
 .footer__copyright {
     font-size: 1.4rem;
-    color: var(--secondary-color-gray, #6a8383);
+    color: #6a8383;
     padding: 30px 0;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
