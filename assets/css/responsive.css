@@ -645,3 +645,10 @@
         font-size: 2rem;
     }
 }
+
+/* Small mobile */
+@media screen and (max-width: 360px) {
+    .blog__heading::after {
+        display: none;
+    }
+}
