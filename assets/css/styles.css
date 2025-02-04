@@ -1018,6 +1018,8 @@ textarea {
     cursor: pointer;
     color: #fff;
     background: rgba(0, 0, 0, 0.7);
+    border: none;
+    outline: none;
 }
 
 /* Feature */
